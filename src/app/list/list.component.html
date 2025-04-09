@@ -1,0 +1,25 @@
+<h2>Presidents of Ireland</h2>
+
+<ul>
+    <li *ngFor="let president of presidents">
+        {{ president }}
+    </li>
+</ul>
+<br>
+
+<h2>Presidents of Ireland</h2>
+<ol>
+    @for(pres of presidents;track pres)
+    {
+        <li>{{ pres }}</li>
+    }
+</ol>
+<br>
+
+<h2>Presidents of Ireland</h2>
+<ul>
+    @for(pres of presidents2;track pres)
+    {
+        <li>{{ pres.name }}, {{pres.term}}</li>
+    }
+</ul>
