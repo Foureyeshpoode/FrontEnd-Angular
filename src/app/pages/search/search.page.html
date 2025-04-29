@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>    
+    <ion-title>Search Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="search-wrapper">
+    <ion-item lines="none" class="search-bar">
+      <ion-icon name="search-outline" slot="start" class="search-icon"></ion-icon>
+      <ion-input
+        placeholder="Search for a movie..."
+        [(ngModel)]="query"
+        (ionInput)="search()"
+        class="search-input"
+        inputmode="text"
+        type="text">
+      </ion-input>
+    </ion-item>
+    <div class="hint-text">
+      Find ratings, cast, and plot details from the IMDb universe.
+    </div>
+  </div>
+
+  <ion-spinner *ngIf="isLoading" name="dots" color="primary" class="ion-margin-top"></ion-spinner>
+
+  <ion-list *ngIf="movies.length">
+    <ion-item *ngFor="let movie of movies" (click)="openMovie(movie.imdbID)">
+      <ion-thumbnail slot="start">
+        <img [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/no-image.png'" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ movie.Title }}</h2>
+        <p>{{ movie.Year }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="noResults && !isLoading" class="ion-text-center ion-margin-top">
+    <p>No movies found. Try a simpler title.</p>
+  </div>
+</ion-content>

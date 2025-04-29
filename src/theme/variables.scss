@@ -1,2 +1,14 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+:root {
+    --ion-color-primary: #f5c518; /* IMDB Yellow */
+    --ion-color-primary-contrast: #121212; /* Contrast for buttons */
+  
+    --ion-background-color: #121212; /* Dark background */
+    --ion-text-color: #ffffff;       /* White text */
+  
+    --ion-toolbar-background: #121212;
+    --ion-toolbar-color: #ffffff;
+  
+    --ion-item-background: #1e1e1e;
+    --ion-card-background: #1e1e1e;
+  }
+  

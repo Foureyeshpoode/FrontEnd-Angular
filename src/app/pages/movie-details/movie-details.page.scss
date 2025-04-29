@@ -1,0 +1,27 @@
+ion-content {
+  --background: #000;
+  color: white;
+}
+
+ion-card {
+  background: #1c1c1c;
+  color: white;
+}
+
+ion-card-title {
+  font-size: 1.4rem;
+  color: #f5c518;
+}
+
+ion-button {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  --border-radius: 999px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  height: 36px;
+  line-height: 20px;
+  text-transform: none;
+  --box-shadow: none;
+}
+

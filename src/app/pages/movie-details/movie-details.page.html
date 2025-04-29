@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="backLink"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Movie Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!isLoading">
+  <ion-card *ngIf="movie">
+    <img [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/no-image.png'" />
+
+    <ion-card-header>
+      <ion-card-title>{{ movie.Title }}</ion-card-title>
+      <ion-card-subtitle>{{ movie.Year }} | {{ movie.Runtime }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+      <p><strong>Director:</strong> {{ movie.Director }}</p>
+      <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+      <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+      <p><strong>IMDb Rating:</strong> {{ movie.imdbRating }}</p>
+
+      <ion-button size="small" fill="outline" color="warning" (click)="toggleFavourite()">
+        <ion-icon slot="start" [name]="isFavourite ? 'heart-dislike' : 'heart'"></ion-icon>
+        {{ isFavourite ? 'Remove from Favourites' : 'Add to Favourites' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="isLoading">
+  <ion-spinner class="ion-padding" name="dots" color="primary"></ion-spinner>
+</ion-content>

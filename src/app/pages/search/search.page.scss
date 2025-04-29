@@ -1,0 +1,49 @@
+:host {
+    display: block;
+    height: 100%;
+  }
+  
+  ion-content {
+    --background: #000 !important;
+    color: white;
+  }
+  
+  ion-toolbar {
+    --background: #111 !important;
+    --color: #fff;
+  }
+  
+  .search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  
+  .search-bar {
+    width: 90%;
+    max-width: 600px;
+    --background: #1c1c1c;
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+    color: white;
+  }
+  
+  .search-icon {
+    color: #f5c518;
+    font-size: 1.2rem;
+  }
+  
+  .search-input {
+    color: white;
+    --placeholder-color: #aaa;
+  }
+  
+  .hint-text {
+    font-style: italic;
+    color: #bbb;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  

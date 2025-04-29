@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>    
+    <ion-title>Favourites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="favourites.length; else noFavs">
+  <ion-list>
+    <ion-item *ngFor="let movie of favourites">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/no-image.png'"></ion-img>
+      </ion-thumbnail>
+      <ion-label (click)="goToDetails(movie.imdbID)">
+        <h2>{{ movie.Title }}</h2>
+        <p>{{ movie.Year }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="danger" slot="end" (click)="removeFromFavourites(movie.imdbID)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ng-template #noFavs>
+  <ion-content class="ion-padding">
+    <div class="ion-text-center">
+      <h3>No favourites yet</h3>
+      <p>Start adding some movies to your favourites!</p>
+    </div>
+  </ion-content>
+</ng-template>
