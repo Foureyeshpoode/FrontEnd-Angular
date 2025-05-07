@@ -19,7 +19,6 @@ export class TmdbService {
   }
 
   getPopularAnimation() {
-    // Animation = genre ID 16 in TMDb
     return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=16&sort_by=popularity.desc`);
   }
 
